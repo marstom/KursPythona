@@ -7,11 +7,13 @@ napisz skrypt drukujący n wyrazów ciągu fibonacciego. Ciąg fibonacciego to t
 Bonus: napisz skrypt sprawdza czy liczba jest liczbą pierwszą czy nie i drukuje odpowiedź na ekran
 """
 
+# 1 parzyste
 
 for i in range(0, 100+2, 2):
     print(i)
 
 
+# 2 parzyste
 for i in range(101):
     if i%2==0:
         print(i)
@@ -19,8 +21,24 @@ for i in range(101):
 
 [i for i in range(101) if i%2!=0]
 
+# 3. fibonacci
 
-# prime
+how_many = 12
+count = 0
+n1, n2 = 0, 1
+
+if how_many <= 0:
+    print("Ilość liczb do wydrukowaia musi być większa lub równa zero!")
+else:
+    while count < how_many:
+        print(f"Count {count}: {n1}")
+        next = n1 + n2
+        n1 = n2
+        n2 = next
+        count += 1
+
+
+#  4 pierwsze
 liczba = 30
 
 if liczba == 1:
@@ -37,22 +55,8 @@ else:
 
 
 
-# fibonacci
 
-how_many = 12
-count = 0
-n1, n2 = 0, 1
-
-if how_many <= 0:
-    print("Ilość liczb do wydrukowaia musi być większa lub równa zero!")
-else:
-    while count < how_many:
-        print(f"Count {count}: {n1}")
-        next = n1 + n2
-        n1 = n2
-        n2 = next
-        count += 1
-
+# 5 zakupy
 
 """
 Mam listę zakupów 'lista_zakupow', zamień ją obiekt typu 'list' posortuj i zapisz jako liste wypisaną od myślników w
