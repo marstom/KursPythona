@@ -7,17 +7,19 @@
 
 
 
-5. Mam listę zakupów 'lista_zakupow', zamień ją obiekt typu 'list' posortuj i zapisz jako liste wypisaną od myślników w
-formie tekstowej i wydrukuj ją na ekran, ma to wyglądać tak:
-```
-- bułki
-- jogurt
-- kakao
-- masło
-- sok jabłkowy
-- szynka
-```
-
+5. Mam listę zakupów 'lista_zakupow'
 ```py 
 lista_zakupow = "bułki, masło, jogurt, kakao, szynka, sok jabłkowy"
+```
+Zamień ją obiekt typu 'list' posortuj i zapisz jako liste wypisaną od myślników w
+formie tekstowej: 
+
+tak ma wyglądać wyprintowany wynik na ekranie:
+```
+- [ ] bułki
+- [ ] jogurt
+- [ ] kakao
+- [ ] masło
+- [ ] sok jabłkowy
+- [ ] szynka
 ```

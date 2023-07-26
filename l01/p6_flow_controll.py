@@ -56,7 +56,7 @@ not False
 3 != 3
 
 3 >= 3  # większe równe
-3 <= 3  # większe równe
+3 <= 3  # mniejsze równe
 
 # == porównuje wartości
 # is porównuje obiekty
@@ -71,8 +71,24 @@ not False
 'kota' in ['ala', 'ma', 'kota']  # true, jest taki element
 'kota' not in ['ala', 'ma', 'kota']  # false, sprawdzam czy nie ma takiego elementu - jest - czyli false
 
+# przykłady z is
+
+2 is 2  # ?
+['ala', 'kot'] is ['ala', 'kot']
+
+lista = ['ala', 'kot']
+lista is lista  # ?
+
+2 is 3  # ?
+("1", "2") is ("1", "2")
+None is None
+2 ** 555 is 2 ** 555  # ? dlaczego nie porównywać liczb is?
+2 ** 555 == 2 ** 555  # ?
+
+"Mam na imie Tomek" is "Mam na imie Tomek"  # ?
+
 # operatory binarne
-mask = 0b00000111  # maska bitowa
+mask = 0b11111111  # maska bitowa
 a = 0b00000101
 print(f'{a:08b} {a}')
 # a = mask ^ a
@@ -97,12 +113,13 @@ fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
 [el for el in range(60, 75)]
 
 # any oraz all
-
 # wszystkie wyrażenie muszą być prawdziwe
+# jak wiele and
 print(all([True, True, False, False]))  # False
 print(all([True, True, True, True]))  # True
 
 # co najmniej jedno musi być prawdą
+# jak wiele or
 print(any([True, True, False, False]))  # True
 print(any([True, True, True, True]))  # True
 print(any([False, False, False, True]))  # True

@@ -1,6 +1,8 @@
 from math import sqrt
 
 
+# ! konstrukcja with ... costam, contextmanager
+
 # zwraca domyślnie None
 def funkcja():
     pass
@@ -24,7 +26,7 @@ def funkcja3():
     a += 12
 
 
-funkcja3()
+# funkcja3()
 
 # można tak...
 a = 5
@@ -69,26 +71,27 @@ def extend_list_sth(lista: list):
     # lista = lista.copy()
     lista.extend(['hej', 'nowe', 'elementy'])
 
-lista = [1,2,3]
+
+lista = [1, 2, 3]
 extend_list_sth(lista)
 # bo jest mutowalna!
 print(lista)
 
 
-
 def average(*args):
     return sum(args) / len(args)
 
-average(1,2,3,4,5)
+
+average(1, 2, 3, 4, 5)
 
 
 def check_number(n):
     if a > 0:
         return "n is psitive"
     elif a == 0:
-        return "n is negative"
+        return "n is zero"
     else:
-        return "n is negative"
+        return "n is positive"
 
 
 check_number(2)
@@ -109,20 +112,21 @@ def fibonacci(how_many):
     return fibonacci_numbers
 
 
-
 print(fibonacci(9))
 print(fibonacci(3))
+
+
 # print(fibonacci(-5))
 
 
 # funkcje wywołane w funkcji
 
-def add(a,b):
-    return a+b
+def add(a, b):
+    return a + b
 
 
-def sub(a,b):
-    return a-b
+def sub(a, b):
+    return a - b
 
 
 def calculator():
@@ -132,17 +136,32 @@ def calculator():
     print("Dodawanie (dodaj) czy odejmowanie (odejmij)?")
     operation = input()
     if operation == "dodaj":
-        return add(a,b)
+        return add(a, b)
     elif operation == "odejmij":
         return sub(a, b)
     else:
         return "Zły typ operacji"
 
-calculator()
+
+# calculator()
+
 # average salary
-# employees = [
-#     ('Eve', 2000),
-#     ('John', 1500),
-#     ('Sarah', 1100),
-#     ('Sarah', 1100),
-# ]
+employees = [
+    ('Eve', 2000),
+    ('John', 1500),
+    ('Sarah', 1100),
+    ('Sarah', 1100),
+]
+
+
+# z list comperhension i bez
+def average_salary(employees):
+    # sum_of_salaries = 0
+    # for employee in employees:
+    #     name, salary = employee
+    #     sum_of_salaries += salary
+    #
+    # return sum_of_salaries / len(employees)
+    return sum([salary for name, salary in employees]) / len(employees)
+
+print("average salary is : ", average_salary(employees))

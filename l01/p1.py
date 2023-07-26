@@ -1,5 +1,6 @@
 # operacje
 # interaktywny interpreter
+from mypy.types import NoneType
 
 # Zmienna
 # jak deklarować
@@ -30,9 +31,25 @@ a // b
 print(f"9/2 = {9 // 2} reszta {9 % 2}")
 print(f"18/7 = {18 // 7} reszta {18 % 7}")
 
+
+x = 3
+y = 4
+a = x / y
+print("%d / %d = %.2f liczba" % (x, y, a))
+print("{} / {} = {}".format(x, y, a))
+print("{arg1} / {arg2} = {wynik}".format(arg1=x, arg2=y, wynik=a))
+
+# od python3.6 dostępny f-string
+zmienna = "Hello"
+print(f"{x:.2f} / {y} = {a:.4f} {zmienna}, a nawet wyrażenie: {5**3}")
+
+
+
 # nic w pythonie to None
 
-cos = None  # po prostu NULL, jest obiektem NoneType, każda zmienna z None wskazuje na ten sam obiekt
+# cos = None  # po prostu NULL, jest obiektem NoneType, każda zmienna z None wskazuje na ten sam obiekt
+
+
 
 # napisy
 'Hello' + ' ' + 'Word'
@@ -40,8 +57,8 @@ cos = None  # po prostu NULL, jest obiektem NoneType, każda zmienna z None wska
 napis = ''
 napis = napis + 'Kurs'
 napis = napis + ' '
-napis = napis + 'pythona'
-napis
+napis += 'pythona'
+print(napis)
 
 napis2 = 'Ala ma kota.'  # 12
 len(napis2)
@@ -79,3 +96,13 @@ napis3[::-2]
 
 # znak nowej linii
 print("to jest\nnastępna linia\njescze następna.")
+
+# split
+napis4 = 'fasef s a kot wuerouwp kot uqpruwurp pies u kot fhoho haoehow ef kot'
+
+podzielony = napis4.split('kot')
+print(podzielony)
+
+
+"id;name;surname;age"
+"1;tomek;marszal;35"

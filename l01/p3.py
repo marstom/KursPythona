@@ -27,6 +27,6 @@ lista[1], lista[2] = lista[2], lista[1]
 'JAN koWaLsKi'.title()
 
 # ZIP (daleka lekcja tam gdzie labdy itp\)
-list(zip('ALA MA KOTA HAHA', 'ala ma kota'))
-
-''.join(list(filter(lambda x: x not in ['.', '*'], 'ala.** ..ma..*.. kota.')))
+# list(zip('ALA MA KOTA HAHA', 'ala ma kota'))
+#
+# ''.join(list(filter(lambda x: x not in ['.', '*'], 'ala.** ..ma..*.. kota.')))

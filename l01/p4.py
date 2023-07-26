@@ -21,7 +21,7 @@ moja_lista = 'The quick brown fox jumps over the lazy dog'.split(' ')
 lista = ['The', 'quick', 'brown', 'fox', 'jumps', 'over', 'the', 'lazy', 'dog']
 # po indeksie
 
-liczby = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+liczby = [1, 2, 1, 4, 5, 1, 7, 8, 1]
 # range
 liczby2 = list(range(0, 20))
 liczby2
@@ -39,7 +39,15 @@ liczby2
 # Zdejmujemy ze stosu
 print(liczby2.pop())
 
-liczby2
+
+# stack
+stack = ['adam', 'tomek', 'celina', 'henry']
+stack.pop()
+stack.pop()
+
+queue = ['adam', 'tomek', 'celina', 'henry']
+queue.pop()
+queue.pop()
 
 # usuńmy 888
 liczby2.remove(888)
@@ -140,5 +148,5 @@ l4 = ['ALA', 'MA', 'KOTA']
 list(zip(l3, l4))
 
 # filtrowanie
-lista = ['The', 'quick', 'brown', 'fox', 'jumps', 'over', 'the', 'lazy', 'dog']
-list(filter(lambda x: len(x) <= 3, lista))
+# lista = ['The', 'quick', 'brown', 'fox', 'jumps', 'over', 'the', 'lazy', 'dog']
+# list(filter(lambda x: len(x) <= 3, lista))
