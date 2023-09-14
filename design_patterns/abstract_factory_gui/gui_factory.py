@@ -29,6 +29,7 @@ class HTMLFactory(GUIFactory):
     def create_checkbox(self) -> Checkbox:
         return HTMLCheckbox()
 
+
 class IOSFactory(GUIFactory):
     def create_button(self) -> Button:
         return IOSButton()
