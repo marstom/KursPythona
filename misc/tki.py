@@ -10,3 +10,7 @@ text.pack()
 
 
 root.mainloop()
+
+
+
+# Niestety muszę użyć wx python

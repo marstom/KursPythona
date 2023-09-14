@@ -17,6 +17,19 @@ def funkcja2():
 
 print(funkcja2())
 
+
+def funkcja_login(username, password):
+    correct_pass = "admin"
+    if username != "Tomek":
+        return "Nie ma takiego użytkownika!"
+    elif username == "Tomek" and password != "admin":
+        return "Użytkownik ok, ale złe hasło"
+    elif username == "Tomek" and password == "admin":
+        return "Poprawne hasło! WJAZD DO APIKI"
+    else:
+        raise Exception("Niepoprawne dane")
+
+
 # scope zmiennych, ERROR
 
 a = 5
@@ -156,12 +169,12 @@ employees = [
 
 # z list comperhension i bez
 def average_salary(employees):
-    # sum_of_salaries = 0
-    # for employee in employees:
-    #     name, salary = employee
-    #     sum_of_salaries += salary
-    #
-    # return sum_of_salaries / len(employees)
-    return sum([salary for name, salary in employees]) / len(employees)
+    sum_of_salaries = 0
+    for employee in employees:
+        name, salary = employee
+        sum_of_salaries += salary
+
+    return sum_of_salaries / len(employees)
+    # return sum([salary for name, salary in employees]) / len(employees)
 
 print("average salary is : ", average_salary(employees))
