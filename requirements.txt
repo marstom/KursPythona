@@ -5,3 +5,4 @@ ipdb
 mypy
 
 pydantic
+pygame
