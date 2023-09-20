@@ -1,5 +1,6 @@
 import pygame
-
+import heartrate
+heartrate.trace(browser=True)
 # this is flyweight
 # memory heavy class that we reuse
 # this should be immutable.

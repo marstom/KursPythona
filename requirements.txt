@@ -6,3 +6,6 @@ mypy
 
 pydantic
 pygame
+
+
+heartrate
