@@ -18,7 +18,6 @@ class Snapshot:
 class Editor:
     def __init__(self):
         self.__state: State = State(x=0, y=0,text= "")
-        ...
 
     @property
     def state(self):
@@ -45,5 +44,7 @@ class Command:
         if self.__backups:
             backup = self.__backups.pop()
             backup.restore()
+            return True
         else:
             print("No more backups...")
+            return False
