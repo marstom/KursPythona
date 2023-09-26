@@ -4,11 +4,14 @@ import random
 from pygame import gfxdraw
 from pygame.colordict import THECOLORS
 
+from shape import Dot, Shape, JSONVisitor, Circle, Rectangle
+
 
 class BaseGame:
 
     def __init__(self):
         # Initialize Pygame
+        self.running = True
 
         pygame.init()
         self.frame_no = 0
@@ -26,10 +29,8 @@ class BaseGame:
         self._init_objects_once()
 
     def game_loop(self):
-        running = True
         clock = pygame.time.Clock()
-        while running:
-            # keys = pygame.key.get_pressed()
+        while self.running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     running = False
@@ -38,6 +39,8 @@ class BaseGame:
                 if event.type == pygame.KEYUP:
                     self._handle_key_up(event.key)
 
+            keys = pygame.key.get_pressed()
+            self._handle_pressed(keys)
             self.__render()
             clock.tick(60)
 
@@ -56,21 +59,42 @@ class BaseGame:
 class Game(BaseGame):
     def _init_objects_once(self):
         print("Init object once")
+        self.dot = Dot(self.screen, gfxdraw.pixel, THECOLORS.get("brown"))
+        self.circle = Circle(self.screen, pygame.draw.circle, THECOLORS.get("blue4"), 50)
+        self.circle.move(231, 321)
+        rect = pygame.Rect(100, 200, 20, 50)
+        self.rect = Rectangle(self.screen, pygame.draw.rect, rect, THECOLORS.get("coral"))
+
+        self.visitor = JSONVisitor()
 
     def _draw_objects_loop(self):
-        for i in range(15):
-            for j in range(15):
-                gfxdraw.pixel(self.screen, i + self.frame_no, j, THECOLORS['brown'])
-        # pygame.draw.line(self.screen, THECOLORS['brown'], (0,0), (self.frame_no, self.frame_no))
-
+        self.circle.draw()
+        self.rect.draw()
+        self.dot.draw()
 
     def _handle_key_down(self, key: int):
+        """Single hit"""
+        if key == pygame.K_q:
+            self.running = False
         print(f"Down: a {key}")
-        # print(f"Down: w {keys[pygame.K_w]}")
 
     def _handle_key_up(self, key: int):
+        """Single up"""
         print(f"UP: a {key}")
-        # print(f"UP: w {keys[pygame.K_w]}")
+        print(f"visit dot json: {self.visitor.visit_dot(self.dot)}")
+        print(f"visit circle json: {self.visitor.visit_circle(self.circle)}")
+        print(f"visit rect json: {self.visitor.visit_rectangle(self.rect)}")
+
+    def _handle_pressed(self, keys: tuple):
+        """Constant move"""
+        if keys[pygame.K_d]:
+            self.dot.move(2, 0)
+        if keys[pygame.K_a]:
+            self.dot.move(-2, 0)
+        if keys[pygame.K_w]:
+            self.dot.move(0, -2)
+        if keys[pygame.K_s]:
+            self.dot.move(0, 2)
 
 
 if __name__ == '__main__':
