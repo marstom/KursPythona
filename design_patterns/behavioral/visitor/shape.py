@@ -31,7 +31,7 @@ class Dot(Shape):
                 self._draw_fn(self._screen, i, j, self._color)
 
     def accept(self, v: "Visitor"):
-        v.visit_dot(self)
+        return v.visit_dot(self)
 
 
 class Rectangle(Shape):
@@ -50,7 +50,7 @@ class Rectangle(Shape):
         self._draw_fn(surface=self._screen, color=self._color, rect=self._rect, border_radius=2)
 
     def accept(self, v: "Visitor"):
-        v.visit_rectangle(self)
+        return v.visit_rectangle(self)
 
 
 class Circle(Shape):
@@ -71,7 +71,7 @@ class Circle(Shape):
         self._draw_fn(self._screen, self._color, (self._center_x, self._center_y), self._radius)
 
     def accept(self, v: "Visitor"):
-        v.visit_circle(self)
+        return v.visit_circle(self)
 
 
 class Visitor(Protocol):

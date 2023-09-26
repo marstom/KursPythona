@@ -81,9 +81,10 @@ class Game(BaseGame):
     def _handle_key_up(self, key: int):
         """Single up"""
         print(f"UP: a {key}")
-        print(f"visit dot json: {self.visitor.visit_dot(self.dot)}")
-        print(f"visit circle json: {self.visitor.visit_circle(self.circle)}")
-        print(f"visit rect json: {self.visitor.visit_rectangle(self.rect)}")
+
+        # Visitor visit each shape
+        for shape in [self.circle, self.rect, self.dot]:
+            print(f"visit {type(shape).__name__} json: {shape.accept(self.visitor)}")
 
     def _handle_pressed(self, keys: tuple):
         """Constant move"""
